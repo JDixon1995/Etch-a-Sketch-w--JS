@@ -15,10 +15,16 @@ body {
 
 button {
     font-size: 2.5rem;
-    border-radius: 1rem;
+    border-radius: .75rem;
     border: 1px solid black;
 }
 
+button:hover {
+    background-color: black;
+    color: white;
+    cursor: pointer;
+
+}
 #btnDiv {
     text-align: center;
     margin: 2rem;
@@ -34,5 +40,9 @@ button {
 
 .grid-item {
     background-color: grey;
+}
+
+.grid-item-darkened {
+    background-color:black;
 }
 
