@@ -2,12 +2,19 @@
 
 //Grid Generation
 
-for(i = 0; i < 256; i++) {
-    var div = document.createElement("div");
-    div.style.width = "500px";
-    div.style.height = "500px";
-    div.style.background = "white";
-    div.style.border = "black solid 1px";
-}
+const container = document.getElementById("gridDiv");
 
-document.getElementById("gridDiv").appendChild(div);
+function makeRows(rows, columns) {
+    container.style.setProperty("--grid-rows", rows);
+    container.style.setProperty("--grid-columns", columns);
+    for(c = 0; c < (rows * columns); c++) {
+        let cell = document.createElement("div");
+        cell.innerText = c + 1;
+        cell.className = "grid-cell";
+        cell.setAttribute('style','font-size:2rem, border:1px solid black');
+        container.appendChild(cell).className = "grid-item";
+    };
+};
+
+makeRows(16, 16);
+
